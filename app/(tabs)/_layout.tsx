@@ -1,10 +1,8 @@
-import { Stack } from "expo-router";
+import { Stack, Tabs } from "expo-router";
 
 export default function() {
     return (
-        <Stack>
-            <Stack.Screen name='(Home)/Home'/>
-            <Stack.Screen name='(ManagePeople)/ManagePeople'/>
-        </Stack>
+        <Tabs>
+        </Tabs>
     )
 }

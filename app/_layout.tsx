@@ -5,7 +5,6 @@ export default function () {
         <Stack screenOptions={{
             headerShown: false
         }}>
-            <Stack.Screen name="(tabs)"/>
         </Stack>
     )
 }
