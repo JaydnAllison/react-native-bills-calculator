@@ -1,9 +1,12 @@
 import { Stack } from "expo-router";
 
 export default function() {
-    <Stack>
-        <Stack.Screen name='AddNewPopup' options={{
-                    presentation: 'modal',
-                }}/>
-    </Stack>
+    return (
+        <Stack>
+            <Stack.Screen name='AddNewPopup' options={{
+                headerTitle: 'Add new',
+                presentation: 'modal'
+            }}/>
+        </Stack>
+    )
 }

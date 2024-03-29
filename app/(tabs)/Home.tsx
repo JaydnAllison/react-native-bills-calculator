@@ -1,4 +1,4 @@
-import { TouchableOpacity, View, Text } from "react-native";
+import { View } from "react-native";
 import styles from "../styles.ts";
 import AddButton from "../../components/Home/AddButton.tsx";
 

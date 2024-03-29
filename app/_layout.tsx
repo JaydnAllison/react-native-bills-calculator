@@ -5,6 +5,9 @@ export default function () {
         <Stack screenOptions={{
             headerShown: false
         }}>
+            <Stack.Screen name='index'/>
+            <Stack.Screen name='(tabs)'/>
+            <Stack.Screen name='(modals)'/>
         </Stack>
     )
 }
