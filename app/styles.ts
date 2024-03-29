@@ -37,6 +37,33 @@ const styles = StyleSheet.create({
 
     addButtonIcon: {
         color: 'white',
+    },
+
+    addNewPopupContainer: {
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        flexWrap: 'wrap'
+    },
+
+    addNewPopupOption: {
+        backgroundColor: 'white',
+        width: '95%',
+        height: 100,
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        margin: 10,
+        padding: 10,
+        borderRadius: 15
+    },
+
+    addNewPopupOptionText: {
+        fontSize: 50,
+        textAlign: 'center',
     }
 });
 

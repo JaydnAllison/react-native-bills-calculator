@@ -9,7 +9,7 @@ export default function AddButton() {
     
     return (
         <View style={styles.addButtonContainer}>
-            <TouchableOpacity style={styles.addButton} onPress={() => router.push('../(modals)/AddNewPopup')}>
+            <TouchableOpacity style={styles.addButton} onPress={() => router.push('AddNewPopup')}>
                 <FontAwesomeIcon style={styles.addButtonIcon} icon={faPlus} size={50}/>
             </TouchableOpacity>
         </View>

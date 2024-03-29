@@ -7,6 +7,14 @@ export default function() {
                 headerTitle: 'Add new',
                 presentation: 'modal'
             }}/>
+
+            <Stack.Screen name='AddNewBill' options={{
+                presentation: 'modal'
+            }}/> 
+
+            <Stack.Screen name='AddNewPerson' options={{
+                presentation: 'modal'
+            }}/>
         </Stack>
     )
 }
