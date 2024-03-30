@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
 
-    addNewPersonContainer: {
+    addNewOptionContainer: {
         width: '100%',
         height: '100%',
         display: 'flex',
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         backgroundColor: Colours.mutedPrimaryColour
     },
 
-    addNewPersonInputsWrapper: {
+    addNewOptionInputsWrapper: {
         position: 'absolute',
         bottom: 0,
         borderRadius: 15,
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
     },
 
-    addNewPersonInputsContainer: {
+    addNewOptionInputsContainer: {
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
         height: '30%'
     },
 
-    addNewPersonNameInput: {
+    addNewOptionNameInput: {
         backgroundColor: Colours.textInput,
         width: '90%',
         borderRadius: 15,
@@ -131,7 +131,17 @@ const styles = StyleSheet.create({
     addNewOptionSubmitButtonText: {
         color: 'white',
         fontSize: 20
-    }
+    },
+
+    addNewBillCostInput: {
+        backgroundColor: Colours.textInput,
+        width: '35%',
+        borderRadius: 15,
+        height: 50,
+        padding: 10,
+        fontSize: 20,
+        margin: 20,
+    },
 });
 
 export default styles;

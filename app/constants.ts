@@ -6,14 +6,12 @@ export type TPerson = {
     percentage: number
 }
 
-export type TDateEntry = { 
-    [keyType: string]: number //number is the cost for that date key is the date
-}
+export type TDateEntries = Record<string, number>; //Date: cost
 
 export type TBill = {
     id: TID,
     name: string,
-    dateEntries: Array<TDateEntry>
+    dateEntries: TDateEntries
 }
 
 export type TJSXProps = {

@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity, FlatList, } from "react-native";
+import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { useState } from "react";
 import styles from "../styles";
 import { faPercent } from "@fortawesome/free-solid-svg-icons";
@@ -23,10 +23,10 @@ export default function AddNewPerson() {
     }
 
     return (
-        <View style={styles.addNewPersonContainer}>
-            <View style={styles.addNewPersonInputsWrapper}>
-                <View style={styles.addNewPersonInputsContainer}>
-                    <TextInput style={styles.addNewPersonNameInput}  placeholder="Name"  value={name} onChangeText={setName}></TextInput>
+        <View style={styles.addNewOptionContainer}>
+            <View style={styles.addNewOptionInputsWrapper}>
+                <View style={styles.addNewOptionInputsContainer}>
+                    <TextInput style={styles.addNewOptionNameInput}  placeholder="Name"  value={name} onChangeText={setName}></TextInput>
 
                     <TextInput style={styles.addNewPersonPercentageInput} placeholder="0" value={percentage} onChangeText={text => {
                         if (isNaN(+text) || +text > 100 || +text < 0) return;
