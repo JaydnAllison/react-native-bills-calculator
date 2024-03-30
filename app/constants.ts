@@ -1,18 +1,24 @@
+export type TID = string | number[];
+
 export type TPerson = {
-    id: string | number[],
+    id: TID,
     name: string,
     percentage: number
 }
 
 export type TDateEntry = { 
-    date: string,
-    cost: number
+    [keyType: string]: number //number is the cost for that date key is the date
 }
 
 export type TBill = {
-    id: string | number[],
+    id: TID,
     name: string,
     dateEntries: Array<TDateEntry>
+}
+
+export type TJSXProps = {
+    children?: any,
+    ref?: any,
 }
 
 type TColours = {

@@ -3,12 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { IconDefinition, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import styles from "../../app/styles";
 import { useRouter } from "expo-router";
+import { TJSXProps } from "../../app/constants";
 
 type TAddNewOptionProps = {
     route: string,
     icon: IconDefinition,
-    children?: string
-}
+} & TJSXProps;
 
 export default function AddNewOption({route, icon, children}: TAddNewOptionProps) {
     const router = useRouter();

@@ -1,14 +1,17 @@
-import { View, Text, TextInput, TouchableOpacity, } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, FlatList, } from "react-native";
 import { useState } from "react";
 import styles from "../styles";
 import { faPercent } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { TPerson } from "../constants";
 import uuid from 'react-native-uuid';
+import { PeopleActionType, usePeopleContext } from "../../global-state/People";
 
 export default function AddNewPerson() {
     const [name, setName] = useState('');
     const [percentage, setPercentage] = useState('');
+
+    const {dispatchPeople} = usePeopleContext();
 
     function createPerson(): TPerson {
         return {name, percentage: isNaN(+percentage) ? 0 : +percentage, id: uuid.v4()};
@@ -16,6 +19,7 @@ export default function AddNewPerson() {
 
     function onSubmit(): void {
         const person = createPerson();
+        dispatchPeople({type: PeopleActionType.AddPerson, payload: {person}});
     }
 
     return (
