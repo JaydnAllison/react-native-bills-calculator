@@ -62,8 +62,75 @@ const styles = StyleSheet.create({
     },
 
     addNewPopupOptionText: {
-        fontSize: 50,
+        fontSize: 40,
         textAlign: 'center',
+    },
+
+    addNewPersonContainer: {
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        backgroundColor: Colours.mutedPrimaryColour
+    },
+
+    addNewPersonInputsWrapper: {
+        position: 'absolute',
+        bottom: 0,
+        borderRadius: 15,
+        width: '100%',
+        height: '70%',
+        backgroundColor: 'white',
+    },
+
+    addNewPersonInputsContainer: {
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        height: '30%'
+    },
+
+    addNewPersonNameInput: {
+        backgroundColor: Colours.textInput,
+        width: '90%',
+        borderRadius: 15,
+        height: 50,
+        padding: 10,
+        fontSize: 20,
+        margin: 20
+    },
+
+    addNewPersonPercentageInput: {
+        backgroundColor: Colours.textInput,
+        width: '25%',
+        borderRadius: 15,
+        height: 50,
+        padding: 10,
+        fontSize: 20,
+        margin: 20
+    },
+
+    addNewOptionSubmitButton: {
+        position: 'absolute',
+        bottom: 40,
+        borderRadius: 100,
+        backgroundColor: Colours.primaryColour,
+        width: '90%',
+        height: 50,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    addNewOptionSubmitButtonDisabled: {
+        opacity: 0.5,
+    },
+
+    addNewOptionSubmitButtonText: {
+        color: 'white',
+        fontSize: 20
     }
 });
 
