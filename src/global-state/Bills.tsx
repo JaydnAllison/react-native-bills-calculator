@@ -1,6 +1,9 @@
 import { createContext, useReducer, Dispatch, useContext } from "react";
 import { TID, TJSXProps } from "../constants.ts";
 import { TBill } from "../constants.ts";
+import useStorageReducer from "../hooks/useStorageReducer.tsx";
+
+const STORAGE_KEY = 'bills';
 
 const enum BillsAction {
     AddBill,
@@ -48,7 +51,7 @@ function billsReducer(prevState: Array<TBill>, action: TBillsAction): Array<TBil
 }
 
 export default function BillsProvider({children}: TJSXProps) {
-    const [state, dispatch] = useReducer(billsReducer, initialState);
+    const [state, dispatch] = useStorageReducer(STORAGE_KEY, billsReducer, initialState);
 
     <BillsContext.Provider value={{bills: state, dispatchBills: dispatch}}>
         {children}
