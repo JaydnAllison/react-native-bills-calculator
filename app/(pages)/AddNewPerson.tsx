@@ -6,10 +6,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { TPerson } from "../../src/constants";
 import uuid from 'react-native-uuid';
 import { PeopleActionType, usePeopleContext } from "../../src/global-state/People";
+import { useRouter } from "expo-router";
 
 export default function AddNewPerson() {
     const [name, setName] = useState('');
     const [percentage, setPercentage] = useState('');
+
+    const router = useRouter();
 
     const {dispatchPeople} = usePeopleContext();
 
@@ -20,6 +23,7 @@ export default function AddNewPerson() {
     function onSubmit(): void {
         const person = createPerson();
         dispatchPeople({type: PeopleActionType.AddPerson, payload: {person}});
+        router.back();
     }
 
     return (

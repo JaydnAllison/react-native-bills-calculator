@@ -2,13 +2,16 @@ import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { useState } from "react";
 import styles from "../../src/styles";
 import { TBill } from "../../src/constants";
+import { useRouter } from "expo-router"; 
 
 export default function AddNewBill() {
     const [name, setName] = useState('');
     const [cost, setCost] = useState('');
 
-    function onSubmit(): void {
+    const router = useRouter();
 
+    function onSubmit(): void {
+        router.back();
     }
 
     return (

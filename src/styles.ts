@@ -142,6 +142,11 @@ const styles = StyleSheet.create({
         fontSize: 20,
         margin: 20,
     },
+
+    managePeopleContainer: {
+        width: '100%',
+        height: '100%'
+    }
 });
 
 export default styles;

@@ -45,7 +45,7 @@ function peopleReducer(prevState: Array<TPerson>, action: TPeopleAction): Array<
 }
 
 export default function PeopleProvider({children}: TJSXProps) {
-    const [state, dispatch] = useStorageReducer(STORAGE_KEY,peopleReducer, initialState); 
+    const [state, dispatch] = useStorageReducer(STORAGE_KEY, peopleReducer, initialState); 
 
     return (
         <PeopleContext.Provider value={{people: state, dispatchPeople: dispatch}}>
