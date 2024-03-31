@@ -1,6 +1,6 @@
 import { createContext, useReducer, Dispatch, useContext } from "react";
-import { TID, TJSXProps } from "../app/constants.ts";
-import { TBill } from "../app/constants.ts";
+import { TID, TJSXProps } from "../constants.ts";
+import { TBill } from "../constants.ts";
 
 const enum BillsAction {
     AddBill,

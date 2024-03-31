@@ -1,7 +1,7 @@
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { useState } from "react";
-import styles from "../styles";
-import { TBill } from "../constants";
+import styles from "../../src/styles";
+import { TBill } from "../../src/constants";
 
 export default function AddNewBill() {
     const [name, setName] = useState('');

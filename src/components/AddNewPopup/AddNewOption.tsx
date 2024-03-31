@@ -1,9 +1,9 @@
 import { TouchableOpacity, Text } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { IconDefinition, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import styles from "../../app/styles";
+import styles from "../../styles";
 import { useRouter } from "expo-router";
-import { TJSXProps } from "../../app/constants";
+import { TJSXProps } from "../../constants";
 
 type TAddNewOptionProps = {
     route: string,

@@ -1,7 +1,7 @@
 import { ScrollView, View } from "react-native";
-import styles from "../styles";
+import styles from "../src/styles.ts";
 import { faUser, faFileInvoiceDollar } from "@fortawesome/free-solid-svg-icons";
-import AddNewOption from "../../components/AddNewPopup/AddNewOption";
+import AddNewOption from "../src/components/AddNewPopup/AddNewOption.tsx";
 
 export default function AddNewPopup() {
     return (

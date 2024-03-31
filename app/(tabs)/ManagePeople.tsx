@@ -1,6 +1,6 @@
 import { View, FlatList, Text } from "react-native";
-import { TPerson } from "../constants";
-import { usePeopleContext } from "../../global-state/People";
+import { TPerson } from "../../src/constants";
+import { usePeopleContext } from "../../src/global-state/People";
 
 export default function ManagePeople() {
     const {people} = usePeopleContext();

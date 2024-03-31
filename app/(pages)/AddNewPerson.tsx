@@ -1,11 +1,11 @@
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { useState } from "react";
-import styles from "../styles";
+import styles from "../../src/styles";
 import { faPercent } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { TPerson } from "../constants";
+import { TPerson } from "../../src/constants";
 import uuid from 'react-native-uuid';
-import { PeopleActionType, usePeopleContext } from "../../global-state/People";
+import { PeopleActionType, usePeopleContext } from "../../src/global-state/People";
 
 export default function AddNewPerson() {
     const [name, setName] = useState('');

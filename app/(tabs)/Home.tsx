@@ -1,7 +1,6 @@
 import { View } from "react-native";
-import styles from "../styles.ts";
-import AddButton from "../../components/Home/AddButton.tsx";
-import { useState } from "react";
+import styles from "../../src/styles.ts";
+import AddButton from "../../src/components/Home/AddButton.tsx";
 
 export default function Home() {
     return (

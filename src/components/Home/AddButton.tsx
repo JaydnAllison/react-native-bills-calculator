@@ -1,5 +1,5 @@
 import { TouchableOpacity, View } from "react-native"
-import styles from "../../app/styles.ts";
+import styles from "../../styles.ts";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "expo-router";

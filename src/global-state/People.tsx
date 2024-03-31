@@ -1,5 +1,5 @@
 import { Dispatch, createContext, useContext, useReducer } from "react";
-import { TJSXProps, TPerson, TID } from "../app/constants.ts";
+import { TJSXProps, TPerson, TID } from "../constants.ts";
 import useStorageReducer from "../hooks/useStorageReducer.tsx";
 
 const STORAGE_KEY = 'people';
