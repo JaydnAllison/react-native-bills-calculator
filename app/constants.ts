@@ -1,3 +1,5 @@
+import { MMKV } from "react-native-mmkv";
+
 export type TID = string | number[];
 
 export type TPerson = {

@@ -1,5 +1,8 @@
 import { Dispatch, createContext, useContext, useReducer } from "react";
 import { TJSXProps, TPerson, TID } from "../app/constants.ts";
+import useStorageReducer from "../hooks/useStorageReducer.tsx";
+
+const STORAGE_KEY = 'people';
 
 export const enum PeopleActionType {
     AddPerson,
@@ -22,27 +25,27 @@ const initialState: Array<TPerson> = [];
 
 const PeopleContext = createContext<TPeopleContext>({people: initialState, dispatchPeople: () => {}});
 
-function peopleReducer(state: Array<TPerson>, action: TPeopleAction): Array<TPerson> {
+function peopleReducer(prevState: Array<TPerson>, action: TPeopleAction): Array<TPerson> {
     switch (action.type) {
         case PeopleActionType.AddPerson:
-            return [...state, action.payload.person];
+            return [...prevState, action.payload.person];
         
         case PeopleActionType.RemovePerson:
-            return state.filter((person: TPerson) => person.id !== action.payload.id);
+            return prevState.filter((person: TPerson) => person.id !== action.payload.id);
 
         case PeopleActionType.ChangePersonName:
-            return state.map((person: TPerson) => person.id === action.payload.id ? {...person, name: action.payload.newName} : person);
+            return prevState.map((person: TPerson) => person.id === action.payload.id ? {...person, name: action.payload.newName} : person);
 
         case PeopleActionType.ChangePersonPercentage:
-            return state.map((person: TPerson) => person.id === action.payload.id ? {...person, percentage: action.payload.newPercentage} : person);
+            return prevState.map((person: TPerson) => person.id === action.payload.id ? {...person, percentage: action.payload.newPercentage} : person);
 
         default:
-            return state;
+            return prevState;
     }
 }
 
 export default function PeopleProvider({children}: TJSXProps) {
-    const [state, dispatch] = useReducer(peopleReducer, initialState);
+    const [state, dispatch] = useStorageReducer(STORAGE_KEY,peopleReducer, initialState); 
 
     return (
         <PeopleContext.Provider value={{people: state, dispatchPeople: dispatch}}>

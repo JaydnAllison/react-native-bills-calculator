@@ -23,19 +23,19 @@ const initialState: Array<TBill> = [];
 
 const BillsContext = createContext<TBillsContext>({bills: initialState, dispatchBills: () => {}});
 
-function billsReducer(state: Array<TBill>, action: TBillsAction): Array<TBill> {
+function billsReducer(prevState: Array<TBill>, action: TBillsAction): Array<TBill> {
     switch(action.type) {
         case BillsAction.AddBill:
-            return [...state, action.payload.bill];
+            return [...prevState, action.payload.bill];
         
         case BillsAction.RemoveBill:
-            return state.filter((bill: TBill) => bill.id !== action.payload.id);
+            return prevState.filter((bill: TBill) => bill.id !== action.payload.id);
 
         case BillsAction.RenameBill: 
-            return state.map((bill: TBill) => bill.id === action.payload.id ? {...bill, name: action.payload.newName} : bill);
+            return prevState.map((bill: TBill) => bill.id === action.payload.id ? {...bill, name: action.payload.newName} : bill);
 
         case BillsAction.ChangeBillCost: 
-            return state.map((bill: TBill) => {
+            return prevState.map((bill: TBill) => {
                 if (bill.id === action.payload.id) {
                     bill.dateEntries[action.payload.date] = action.payload.cost;
                 }
@@ -43,7 +43,7 @@ function billsReducer(state: Array<TBill>, action: TBillsAction): Array<TBill> {
             });
 
         default:
-            return state;
+            return prevState;
     }
 }
 
