@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Alert, KeyboardAvoidingView, SafeAreaView } from "react-native";
 import { useState } from "react";
 import styles from "../../src/styles";
 import { faPercent } from "@fortawesome/free-solid-svg-icons";
@@ -58,7 +58,7 @@ export default function PersonPage() {
     }
 
     return (
-        <View style={styles.addNewOptionContainer}>
+        <SafeAreaView style={styles.addNewOptionContainer}>
             <View style={styles.addNewOptionInputsWrapper}>
                 <View style={styles.addNewOptionInputsContainer}>
                     <TextInput style={styles.addNewOptionNameInput}  placeholder={person.name}  value={name} onChangeText={setName}></TextInput>
@@ -74,21 +74,30 @@ export default function PersonPage() {
                         top: '72%'
                     }}/>
                 </View>
+                <KeyboardAvoidingView style={{
+                    flex: 1,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    flexDirection: 'row',
+                    alignItems: 'flex-end'
+                }} keyboardVerticalOffset={280} behavior="padding">
+                    <TouchableOpacity disabled={isConfirmButtonDisabled()} 
+                        style={{...isConfirmButtonDisabled() ? {...styles.addNewOptionSubmitButton, ...styles.addNewOptionSubmitButtonDisabled} : styles.addNewOptionSubmitButton, 
+                            bottom: 100,
+                        }} 
+                        onPress={onSubmit}>
+                        <Text style={styles.addNewOptionSubmitButtonText}>Confirm Changes</Text>
+                    </TouchableOpacity>
+                </KeyboardAvoidingView>
             </View>
+
+            
 
             <TouchableOpacity 
                 style={styles.removePersonButton} 
                 onPress={onRemovePressed}>
                 <Text style={styles.addNewOptionSubmitButtonText}>Remove Person</Text>
             </TouchableOpacity>
-
-            <TouchableOpacity disabled={isConfirmButtonDisabled()} 
-                style={{...isConfirmButtonDisabled() ? {...styles.addNewOptionSubmitButton, ...styles.addNewOptionSubmitButtonDisabled} : styles.addNewOptionSubmitButton, 
-                    bottom: 100,
-                }} 
-                onPress={onSubmit}>
-                <Text style={styles.addNewOptionSubmitButtonText}>Confirm Changes</Text>
-            </TouchableOpacity>
-        </View>
+        </SafeAreaView>
     )
 }

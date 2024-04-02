@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView } from "react-native";
 import { useState } from "react";
 import styles from "../../src/styles";
 import { faPercent } from "@fortawesome/free-solid-svg-icons";
@@ -43,13 +43,21 @@ export default function AddNewPerson() {
                         top: '72%'
                     }}/>
                 </View>
-            </View>
 
-            <TouchableOpacity disabled={!name.length} 
-                style={!name.length ? {...styles.addNewOptionSubmitButton, ...styles.addNewOptionSubmitButtonDisabled} : styles.addNewOptionSubmitButton} 
-                onPress={onSubmit}>
-                <Text style={styles.addNewOptionSubmitButtonText}>Create Person</Text>
-            </TouchableOpacity>
+                <KeyboardAvoidingView style={{
+                    flex: 1,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    flexDirection: 'row',
+                    alignItems: 'flex-end',
+                }} keyboardVerticalOffset={300} behavior="padding">
+                    <TouchableOpacity disabled={!name.length} 
+                        style={!name.length ? {...styles.addNewOptionSubmitButton, ...styles.addNewOptionSubmitButtonDisabled} : styles.addNewOptionSubmitButton} 
+                        onPress={onSubmit}>
+                        <Text style={styles.addNewOptionSubmitButtonText}>Create Person</Text>
+                    </TouchableOpacity>
+                </KeyboardAvoidingView>
+            </View>
         </View>
     )
 }

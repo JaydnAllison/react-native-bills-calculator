@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     },
 
     addNewOptionSubmitButton: {
-        position: 'absolute',
+        // position: 'absolute',
         bottom: 40,
         borderRadius: 100,
         backgroundColor: Colours.primaryColour,
