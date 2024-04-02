@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity, KeyboardAvoidingView } from "react-native";
+import { View, TextInput } from "react-native";
 import { useState } from "react";
 import styles from "../../src/styles";
 import { faPercent } from "@fortawesome/free-solid-svg-icons";
@@ -7,6 +7,7 @@ import { TPerson } from "../../src/constants";
 import uuid from 'react-native-uuid';
 import { PeopleActionType, usePeopleContext } from "../../src/global-state/People";
 import { useRouter } from "expo-router";
+import DynamicConfirmButton from "../../src/components/DynamicConfirmButton";
 
 export default function AddNewPerson() {
     const [name, setName] = useState('');
@@ -44,19 +45,7 @@ export default function AddNewPerson() {
                     }}/>
                 </View>
 
-                <KeyboardAvoidingView style={{
-                    flex: 1,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    flexDirection: 'row',
-                    alignItems: 'flex-end',
-                }} keyboardVerticalOffset={300} behavior="padding">
-                    <TouchableOpacity disabled={!name.length} 
-                        style={!name.length ? {...styles.addNewOptionSubmitButton, ...styles.addNewOptionSubmitButtonDisabled} : styles.addNewOptionSubmitButton} 
-                        onPress={onSubmit}>
-                        <Text style={styles.addNewOptionSubmitButtonText}>Create Person</Text>
-                    </TouchableOpacity>
-                </KeyboardAvoidingView>
+                <DynamicConfirmButton text='Create Person' onPress={onSubmit} disabled={!name.length}/>
             </View>
         </View>
     )

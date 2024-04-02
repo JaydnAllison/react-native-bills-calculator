@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { TPerson } from "../../src/constants";
 import { PeopleActionType, usePeopleContext } from "../../src/global-state/People";
 import { useLocalSearchParams, useRouter } from "expo-router";
+import DynamicConfirmButton from "../../src/components/DynamicConfirmButton";
 
 export default function PersonPage() {
     const {id} = useLocalSearchParams();
@@ -74,21 +75,8 @@ export default function PersonPage() {
                         top: '72%'
                     }}/>
                 </View>
-                <KeyboardAvoidingView style={{
-                    flex: 1,
-                    display: 'flex',
-                    justifyContent: 'center',
-                    flexDirection: 'row',
-                    alignItems: 'flex-end'
-                }} keyboardVerticalOffset={280} behavior="padding">
-                    <TouchableOpacity disabled={isConfirmButtonDisabled()} 
-                        style={{...isConfirmButtonDisabled() ? {...styles.addNewOptionSubmitButton, ...styles.addNewOptionSubmitButtonDisabled} : styles.addNewOptionSubmitButton, 
-                            bottom: 100,
-                        }} 
-                        onPress={onSubmit}>
-                        <Text style={styles.addNewOptionSubmitButtonText}>Confirm Changes</Text>
-                    </TouchableOpacity>
-                </KeyboardAvoidingView>
+                
+                <DynamicConfirmButton text='Confirm Changes' disabled={isConfirmButtonDisabled()} onPress={onSubmit} offset={60}/>
             </View>
 
             
