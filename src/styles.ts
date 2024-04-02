@@ -146,6 +146,18 @@ const styles = StyleSheet.create({
     managePeopleContainer: {
         width: '100%',
         height: '100%'
+    },
+
+    removePersonButton: {
+        position: 'absolute',
+        bottom: 40,
+        borderRadius: 100,
+        backgroundColor: 'red',
+        width: '90%',
+        height: 50,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 });
 

@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Alert } from "react-native";
 import { useState } from "react";
 import styles from "../../src/styles";
 import { faPercent } from "@fortawesome/free-solid-svg-icons";
@@ -37,6 +37,26 @@ export default function PersonPage() {
         router.back();
     }
 
+    function onRemovePressed(): void {
+        Alert.alert(`Are you sure you want to remove ${person?.name}`, '', [
+            {
+                text: 'cancel',
+                style: 'cancel',
+            },
+
+            {
+                text: 'confirm',
+                style: 'default',
+                onPress: removePerson
+            }
+        ]);
+    }
+
+    function removePerson(): void {
+        router.back(); //Must be called before the re render to avoid error 
+        dispatchPeople({type: PeopleActionType.RemovePerson, payload: {id: id as string}});
+    }
+
     return (
         <View style={styles.addNewOptionContainer}>
             <View style={styles.addNewOptionInputsWrapper}>
@@ -56,10 +76,16 @@ export default function PersonPage() {
                 </View>
             </View>
 
-            {/* TODO: Create a remove button that brings up a popup asking if you are sure */}
+            <TouchableOpacity 
+                style={styles.removePersonButton} 
+                onPress={onRemovePressed}>
+                <Text style={styles.addNewOptionSubmitButtonText}>Remove Person</Text>
+            </TouchableOpacity>
 
             <TouchableOpacity disabled={isConfirmButtonDisabled()} 
-                style={isConfirmButtonDisabled() ? {...styles.addNewOptionSubmitButton, ...styles.addNewOptionSubmitButtonDisabled} : styles.addNewOptionSubmitButton} 
+                style={{...isConfirmButtonDisabled() ? {...styles.addNewOptionSubmitButton, ...styles.addNewOptionSubmitButtonDisabled} : styles.addNewOptionSubmitButton, 
+                    bottom: 100,
+                }} 
                 onPress={onSubmit}>
                 <Text style={styles.addNewOptionSubmitButtonText}>Confirm Changes</Text>
             </TouchableOpacity>

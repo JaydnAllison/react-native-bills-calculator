@@ -1,3 +1,5 @@
+import { PropsWithChildren, PropsWithRef } from "react";
+
 export type TID = string | number[];
 
 export type TPerson = {
@@ -14,10 +16,7 @@ export type TBill = {
     dateEntries: TDateEntries
 }
 
-export type TJSXProps = {
-    children?: any,
-    ref?: any,
-}
+export type TJSXProps<P = unknown> = PropsWithChildren & PropsWithRef<P>; 
 
 type TColours = {
     primaryColour: string,
