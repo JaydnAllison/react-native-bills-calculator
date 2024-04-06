@@ -1,11 +1,26 @@
-import { useState } from "react";
-import { TouchableOpacity, Text } from "react-native";
+import { useCurrentDateContext } from "../../global-state/CurrentDate.";
+import { Pressable, View, Text } from "react-native";
+import styles from "../../styles";
+import { useMonthPickerEnabledContext } from "../../global-state/MonthPickerEnabled.tsx";
 
 export default function ChooseMonthButton() {
-    //TODO: Create a month picker 
+    const {currentDate} = useCurrentDateContext();
+    const {setMonthPickerEnabled} = useMonthPickerEnabledContext();
+
+    function getReadableDate(): string {
+        const splitDate = currentDate.toDateString().split(' ');
+        const [year, month] = [splitDate[3], splitDate[1]];
+
+        return `${month} ${year}`;
+    }
+
     return (
-        <TouchableOpacity>
-            <Text>Change Month</Text>
-        </TouchableOpacity>
+        <>
+        <View>
+            <Pressable style={styles.monthPickerButton} onPress={() => setMonthPickerEnabled(true)}>
+                <Text style={styles.monthPickerButtonText}>{getReadableDate()}</Text>
+            </Pressable>
+        </View>
+        </>
     )
 }

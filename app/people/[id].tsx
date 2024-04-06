@@ -1,4 +1,4 @@
-import { View, Text, TextInput, TouchableOpacity, Alert, KeyboardAvoidingView, SafeAreaView } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, Alert, SafeAreaView } from "react-native";
 import { useState } from "react";
 import styles from "../../src/styles";
 import { faPercent } from "@fortawesome/free-solid-svg-icons";

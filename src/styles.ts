@@ -157,6 +157,38 @@ const styles = StyleSheet.create({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+    },
+
+    monthPickerButton: {
+        marginRight: 10,
+        borderColor: 'black',
+        backgroundColor: 'white',
+        borderRadius: 1,
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 5
+    },
+
+    monthPickerButtonText: {
+        textAlign: 'center',
+    },
+
+    monthPickerContainer: {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+
+    monthPickerWrapper: {
+        width: 400,
+        height: 400,
+        backgroundColor: 'red'
     }
 });
 
