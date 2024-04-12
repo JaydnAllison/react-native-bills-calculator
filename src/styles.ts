@@ -187,8 +187,9 @@ const styles = StyleSheet.create({
 
     monthPickerWrapper: {
         width: 400,
-        height: 400,
-        backgroundColor: 'red'
+        height: 200,
+        display: 'flex',
+        flexDirection: 'row'
     }
 });
 
